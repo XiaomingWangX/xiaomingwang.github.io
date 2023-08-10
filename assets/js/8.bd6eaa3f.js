@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{281:function(e,n,t){"use strict";t.r(n);var s={name:"resource"},c=t(10),r=Object(c.a)(s,function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("\n    出来混的迟早要还的！\n")])},[],!1,null,"99dbfd7c",null);n.default=r.exports}}]);
