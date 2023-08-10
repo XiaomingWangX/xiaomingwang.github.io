@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{423:function(n,e,s){"use strict";s.r(e);var t={name:"resource"},u=s(20),c=Object(u.a)(t,(function(){return(0,this._self._c)("div",[this._v("\n    这是资源，这里拥有全世界\n")])}),[],!1,null,"16002916",null);e.default=c.exports}}]);
