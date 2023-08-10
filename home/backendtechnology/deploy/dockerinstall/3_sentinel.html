@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redis Sentinel 集群部署</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.a0ada997.css" as="style"><link rel="preload" href="/assets/js/app.a8d644b6.js" as="script"><link rel="preload" href="/assets/js/2.b0571e25.js" as="script"><link rel="preload" href="/assets/js/72.fd85a201.js" as="script"><link rel="prefetch" href="/assets/js/10.c8889642.js"><link rel="prefetch" href="/assets/js/100.51a741fb.js"><link rel="prefetch" href="/assets/js/101.d9dbfe05.js"><link rel="prefetch" href="/assets/js/102.52466a3b.js"><link rel="prefetch" href="/assets/js/103.3cf394c6.js"><link rel="prefetch" href="/assets/js/104.90d3018b.js"><link rel="prefetch" href="/assets/js/105.dd9bdeef.js"><link rel="prefetch" href="/assets/js/106.6bda79d0.js"><link rel="prefetch" href="/assets/js/107.ef743f0b.js"><link rel="prefetch" href="/assets/js/108.fa92013e.js"><link rel="prefetch" href="/assets/js/109.50afa695.js"><link rel="prefetch" href="/assets/js/11.e31c3ea5.js"><link rel="prefetch" href="/assets/js/110.aad632dd.js"><link rel="prefetch" href="/assets/js/111.499096ad.js"><link rel="prefetch" href="/assets/js/112.6069b48f.js"><link rel="prefetch" href="/assets/js/113.b8841596.js"><link rel="prefetch" href="/assets/js/114.23496351.js"><link rel="prefetch" href="/assets/js/115.e08ac3c1.js"><link rel="prefetch" href="/assets/js/116.760ebdb3.js"><link rel="prefetch" href="/assets/js/117.f226c0c1.js"><link rel="prefetch" href="/assets/js/118.65289b19.js"><link rel="prefetch" href="/assets/js/119.e3cf777f.js"><link rel="prefetch" href="/assets/js/12.78a1ab5b.js"><link rel="prefetch" href="/assets/js/120.7760e751.js"><link rel="prefetch" href="/assets/js/121.05ec49dd.js"><link rel="prefetch" href="/assets/js/122.688774b7.js"><link rel="prefetch" href="/assets/js/123.06bf7f11.js"><link rel="prefetch" href="/assets/js/124.62bfda58.js"><link rel="prefetch" href="/assets/js/125.eda5b500.js"><link rel="prefetch" href="/assets/js/126.1b39c0b0.js"><link rel="prefetch" href="/assets/js/127.65be59e4.js"><link rel="prefetch" href="/assets/js/128.25fbb5dc.js"><link rel="prefetch" href="/assets/js/129.cd5e2b4b.js"><link rel="prefetch" href="/assets/js/13.6a543448.js"><link rel="prefetch" href="/assets/js/130.fcc93329.js"><link rel="prefetch" href="/assets/js/131.6d7c37d1.js"><link rel="prefetch" href="/assets/js/132.09cf25fb.js"><link rel="prefetch" href="/assets/js/133.583d15f0.js"><link rel="prefetch" href="/assets/js/134.7b72ef87.js"><link rel="prefetch" href="/assets/js/135.733d2857.js"><link rel="prefetch" href="/assets/js/136.b8649b26.js"><link rel="prefetch" href="/assets/js/137.e71138fa.js"><link rel="prefetch" href="/assets/js/138.95b4f55f.js"><link rel="prefetch" href="/assets/js/139.c09e22b6.js"><link rel="prefetch" href="/assets/js/14.819689ab.js"><link rel="prefetch" href="/assets/js/140.71186b46.js"><link rel="prefetch" href="/assets/js/141.5bb51b5a.js"><link rel="prefetch" href="/assets/js/142.94804f8e.js"><link rel="prefetch" href="/assets/js/143.7191f64e.js"><link rel="prefetch" href="/assets/js/144.d2957568.js"><link rel="prefetch" href="/assets/js/145.651e0adf.js"><link rel="prefetch" href="/assets/js/146.d0a83694.js"><link rel="prefetch" href="/assets/js/147.fc4d286f.js"><link rel="prefetch" href="/assets/js/148.410aec93.js"><link rel="prefetch" href="/assets/js/149.a453f4de.js"><link rel="prefetch" href="/assets/js/15.5bc49d67.js"><link rel="prefetch" href="/assets/js/150.77f0ea12.js"><link rel="prefetch" href="/assets/js/151.c808f32e.js"><link rel="prefetch" href="/assets/js/152.22e5d574.js"><link rel="prefetch" href="/assets/js/153.bc4da283.js"><link rel="prefetch" href="/assets/js/154.fa61ee21.js"><link rel="prefetch" href="/assets/js/155.42087f9f.js"><link rel="prefetch" href="/assets/js/156.7745074e.js"><link rel="prefetch" href="/assets/js/157.804702be.js"><link rel="prefetch" href="/assets/js/158.b6fe8f70.js"><link rel="prefetch" href="/assets/js/159.8a7a433b.js"><link rel="prefetch" href="/assets/js/16.434879fd.js"><link rel="prefetch" href="/assets/js/160.1a976dd2.js"><link rel="prefetch" href="/assets/js/161.14311375.js"><link rel="prefetch" href="/assets/js/162.6bbdd1e5.js"><link rel="prefetch" href="/assets/js/163.2c60a568.js"><link rel="prefetch" href="/assets/js/164.e7567976.js"><link rel="prefetch" href="/assets/js/165.7a2dc778.js"><link rel="prefetch" href="/assets/js/166.c9a838e8.js"><link rel="prefetch" href="/assets/js/17.14403580.js"><link rel="prefetch" href="/assets/js/18.08ac9cad.js"><link rel="prefetch" href="/assets/js/19.2c183b64.js"><link rel="prefetch" href="/assets/js/20.32bb3cb9.js"><link rel="prefetch" href="/assets/js/21.d966558e.js"><link rel="prefetch" href="/assets/js/22.c75c7c76.js"><link rel="prefetch" href="/assets/js/23.7fd7f7c3.js"><link rel="prefetch" href="/assets/js/24.36b6b4eb.js"><link rel="prefetch" href="/assets/js/25.8f357f46.js"><link rel="prefetch" href="/assets/js/26.61d906dd.js"><link rel="prefetch" href="/assets/js/27.08330a35.js"><link rel="prefetch" href="/assets/js/28.b1e01410.js"><link rel="prefetch" href="/assets/js/29.936218e3.js"><link rel="prefetch" href="/assets/js/3.3214ea23.js"><link rel="prefetch" href="/assets/js/30.c0b9efde.js"><link rel="prefetch" href="/assets/js/31.5b6e3df7.js"><link rel="prefetch" href="/assets/js/32.6374edaf.js"><link rel="prefetch" href="/assets/js/33.928e8282.js"><link rel="prefetch" href="/assets/js/34.92067108.js"><link rel="prefetch" href="/assets/js/35.154d21dd.js"><link rel="prefetch" href="/assets/js/36.e5ad0869.js"><link rel="prefetch" href="/assets/js/37.385b33d5.js"><link rel="prefetch" href="/assets/js/38.215a6333.js"><link rel="prefetch" href="/assets/js/39.bbf6207d.js"><link rel="prefetch" href="/assets/js/4.d34ebd53.js"><link rel="prefetch" href="/assets/js/40.bc0f7c00.js"><link rel="prefetch" href="/assets/js/41.3ba84cff.js"><link rel="prefetch" href="/assets/js/42.04a42e98.js"><link rel="prefetch" href="/assets/js/43.9a5e58fa.js"><link rel="prefetch" href="/assets/js/44.ad33bbd6.js"><link rel="prefetch" href="/assets/js/45.17f6595d.js"><link rel="prefetch" href="/assets/js/46.a5afba11.js"><link rel="prefetch" href="/assets/js/47.838086e6.js"><link rel="prefetch" href="/assets/js/48.34f3613a.js"><link rel="prefetch" href="/assets/js/49.726aa7d7.js"><link rel="prefetch" href="/assets/js/5.95ea0968.js"><link rel="prefetch" href="/assets/js/50.cb833116.js"><link rel="prefetch" href="/assets/js/51.3ed1ad45.js"><link rel="prefetch" href="/assets/js/52.54cf0f85.js"><link rel="prefetch" href="/assets/js/53.513a15ca.js"><link rel="prefetch" href="/assets/js/54.48b671a4.js"><link rel="prefetch" href="/assets/js/55.4ea41ff7.js"><link rel="prefetch" href="/assets/js/56.2c85bb70.js"><link rel="prefetch" href="/assets/js/57.c4b7c57f.js"><link rel="prefetch" href="/assets/js/58.8645cbfa.js"><link rel="prefetch" href="/assets/js/59.93bb241a.js"><link rel="prefetch" href="/assets/js/6.d3d6f703.js"><link rel="prefetch" href="/assets/js/60.bb6e6605.js"><link rel="prefetch" href="/assets/js/61.286ce4e5.js"><link rel="prefetch" href="/assets/js/62.faedf14e.js"><link rel="prefetch" href="/assets/js/63.ce821da4.js"><link rel="prefetch" href="/assets/js/64.d3bd4444.js"><link rel="prefetch" href="/assets/js/65.6dce8124.js"><link rel="prefetch" href="/assets/js/66.9926dcf1.js"><link rel="prefetch" href="/assets/js/67.8ba47f6f.js"><link rel="prefetch" href="/assets/js/68.fb08fa45.js"><link rel="prefetch" href="/assets/js/69.99366761.js"><link rel="prefetch" href="/assets/js/7.65a53a16.js"><link rel="prefetch" href="/assets/js/70.b58184ca.js"><link rel="prefetch" href="/assets/js/71.e807ce86.js"><link rel="prefetch" href="/assets/js/73.347f4455.js"><link rel="prefetch" href="/assets/js/74.1614468f.js"><link rel="prefetch" href="/assets/js/75.1b48dd21.js"><link rel="prefetch" href="/assets/js/76.34386640.js"><link rel="prefetch" href="/assets/js/77.98723d2f.js"><link rel="prefetch" href="/assets/js/78.853e0232.js"><link rel="prefetch" href="/assets/js/79.f13b56d9.js"><link rel="prefetch" href="/assets/js/8.1f5a2468.js"><link rel="prefetch" href="/assets/js/80.9b7ea6e5.js"><link rel="prefetch" href="/assets/js/81.b6c297c9.js"><link rel="prefetch" href="/assets/js/82.0f97cc22.js"><link rel="prefetch" href="/assets/js/83.31634315.js"><link rel="prefetch" href="/assets/js/84.c8e9154d.js"><link rel="prefetch" href="/assets/js/85.961b5b48.js"><link rel="prefetch" href="/assets/js/86.0656beb0.js"><link rel="prefetch" href="/assets/js/87.2216b902.js"><link rel="prefetch" href="/assets/js/88.5f59eb52.js"><link rel="prefetch" href="/assets/js/89.c1a19999.js"><link rel="prefetch" href="/assets/js/9.4ab6239e.js"><link rel="prefetch" href="/assets/js/90.c3ffff3a.js"><link rel="prefetch" href="/assets/js/91.093bc4a1.js"><link rel="prefetch" href="/assets/js/92.b98a6c4b.js"><link rel="prefetch" href="/assets/js/93.721ce10b.js"><link rel="prefetch" href="/assets/js/94.2c601c95.js"><link rel="prefetch" href="/assets/js/95.d1677f3d.js"><link rel="prefetch" href="/assets/js/96.e71019bc.js"><link rel="prefetch" href="/assets/js/97.d7a92048.js"><link rel="prefetch" href="/assets/js/98.21bdf582.js"><link rel="prefetch" href="/assets/js/99.5df4fe80.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a0ada997.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="概述"><a href="#概述" aria-hidden="true" class="header-anchor">#</a> 概述</h2> <p>Redis 集群可以在一组 redis 节点之间实现高可用性和 sharding。在集群中会有 1 个 master 和多个 slave 节点。当 master 节点失效时，应选举出一个 slave 节点作为新的 master。然而 Redis 本身(包括它的很多客户端)没有实现自动故障发现并进行主备切换的能力，需要外部的监控方案来实现自动故障恢复。</p> <p>Redis Sentinel 是官方推荐的高可用性解决方案。它是 Redis 集群的监控管理工具，可以提供节点监控、通知、自动故障恢复和客户端配置发现服务。</p> <p><img src="/img/deploy/sentinel1.jpg" alt="sentinel"></p> <h2 id="redis-sentinel-核心配置"><a href="#redis-sentinel-核心配置" aria-hidden="true" class="header-anchor">#</a> Redis Sentinel 核心配置</h2> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># Example sentinel.conf</span>
+
+<span class="token comment"># *** IMPORTANT ***</span>
+<span class="token comment">#</span>
+<span class="token comment"># By default Sentinel will not be reachable from interfaces different than</span>
+<span class="token comment"># localhost, either use the 'bind' directive to bind to a list of network</span>
+<span class="token comment"># interfaces, or disable protected mode with &quot;protected-mode no&quot; by</span>
+<span class="token comment"># adding it to this configuration file.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Before doing that MAKE SURE the instance is protected from the outside</span>
+<span class="token comment"># world via firewalling or other means.</span>
+<span class="token comment">#</span>
+<span class="token comment"># For example you may use one of the following:</span>
+<span class="token comment">#</span>
+<span class="token comment"># bind 127.0.0.1 192.168.1.1</span>
+<span class="token comment">#</span>
+<span class="token comment"># protected-mode no</span>
+
+<span class="token comment"># port &lt;sentinel-port&gt;</span>
+<span class="token comment"># The port that this sentinel instance will run on</span>
+port <span class="token number">26379</span>
+
+<span class="token comment"># sentinel announce-ip &lt;ip&gt;</span>
+<span class="token comment"># sentinel announce-port &lt;port&gt;</span>
+<span class="token comment">#</span>
+<span class="token comment"># The above two configuration directives are useful in environments where,</span>
+<span class="token comment"># because of NAT, Sentinel is reachable from outside via a non-local address.</span>
+<span class="token comment">#</span>
+<span class="token comment"># When announce-ip is provided, the Sentinel will claim the specified IP address</span>
+<span class="token comment"># in HELLO messages used to gossip its presence, instead of auto-detecting the</span>
+<span class="token comment"># local address as it usually does.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Similarly when announce-port is provided and is valid and non-zero, Sentinel</span>
+<span class="token comment"># will announce the specified TCP port.</span>
+<span class="token comment">#</span>
+<span class="token comment"># The two options don't need to be used together, if only announce-ip is</span>
+<span class="token comment"># provided, the Sentinel will announce the specified IP and the server port</span>
+<span class="token comment"># as specified by the &quot;port&quot; option. If only announce-port is provided, the</span>
+<span class="token comment"># Sentinel will announce the auto-detected local IP and the specified port.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Example:</span>
+<span class="token comment">#</span>
+<span class="token comment"># sentinel announce-ip 1.2.3.4</span>
+
+<span class="token comment"># dir &lt;working-directory&gt;</span>
+<span class="token comment"># Every long running process should have a well-defined working directory.</span>
+<span class="token comment"># For Redis Sentinel to chdir to /tmp at startup is the simplest thing</span>
+<span class="token comment"># for the process to don't interfere with administrative tasks such as</span>
+<span class="token comment"># unmounting filesystems.</span>
+<span class="token function">dir</span> /tmp
+
+<span class="token comment"># sentinel monitor &lt;master-name&gt; &lt;ip&gt; &lt;redis-port&gt; &lt;quorum&gt;</span>
+<span class="token comment">#</span>
+<span class="token comment"># Tells Sentinel to monitor this master, and to consider it in O_DOWN</span>
+<span class="token comment"># (Objectively Down) state only if at least &lt;quorum&gt; sentinels agree.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Note that whatever is the ODOWN quorum, a Sentinel will require to</span>
+<span class="token comment"># be elected by the majority of the known Sentinels in order to</span>
+<span class="token comment"># start a failover, so no failover can be performed in minority.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Slaves are auto-discovered, so you don't need to specify slaves in</span>
+<span class="token comment"># any way. Sentinel itself will rewrite this configuration file adding</span>
+<span class="token comment"># the slaves using additional configuration options.</span>
+<span class="token comment"># Also note that the configuration file is rewritten when a</span>
+<span class="token comment"># slave is promoted to master.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Note: master name should not include special characters or spaces.</span>
+<span class="token comment"># The valid charset is A-z 0-9 and the three characters &quot;.-_&quot;.</span>
+sentinel monitor mymaster <span class="token number">127.0</span>.0.1 <span class="token number">6379</span> <span class="token number">2</span>
+
+<span class="token comment"># sentinel auth-pass &lt;master-name&gt; &lt;password&gt;</span>
+<span class="token comment">#</span>
+<span class="token comment"># Set the password to use to authenticate with the master and slaves.</span>
+<span class="token comment"># Useful if there is a password set in the Redis instances to monitor.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Note that the master password is also used for slaves, so it is not</span>
+<span class="token comment"># possible to set a different password in masters and slaves instances</span>
+<span class="token comment"># if you want to be able to monitor these instances with Sentinel.</span>
+<span class="token comment">#</span>
+<span class="token comment"># However you can have Redis instances without the authentication enabled</span>
+<span class="token comment"># mixed with Redis instances requiring the authentication (as long as the</span>
+<span class="token comment"># password set is the same for all the instances requiring the password) as</span>
+<span class="token comment"># the AUTH command will have no effect in Redis instances with authentication</span>
+<span class="token comment"># switched off.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Example:</span>
+<span class="token comment">#</span>
+<span class="token comment"># sentinel auth-pass mymaster MySUPER--secret-0123passw0rd</span>
+
+<span class="token comment"># sentinel down-after-milliseconds &lt;master-name&gt; &lt;milliseconds&gt;</span>
+<span class="token comment">#</span>
+<span class="token comment"># Number of milliseconds the master (or any attached slave or sentinel) should</span>
+<span class="token comment"># be unreachable (as in, not acceptable reply to PING, continuously, for the</span>
+<span class="token comment"># specified period) in order to consider it in S_DOWN state (Subjectively</span>
+<span class="token comment"># Down).</span>
+<span class="token comment">#</span>
+<span class="token comment"># Default is 30 seconds.</span>
+sentinel down-after-milliseconds mymaster <span class="token number">30000</span>
+
+<span class="token comment"># sentinel parallel-syncs &lt;master-name&gt; &lt;numslaves&gt;</span>
+<span class="token comment">#</span>
+<span class="token comment"># How many slaves we can reconfigure to point to the new slave simultaneously</span>
+<span class="token comment"># during the failover. Use a low number if you use the slaves to serve query</span>
+<span class="token comment"># to avoid that all the slaves will be unreachable at about the same</span>
+<span class="token comment"># time while performing the synchronization with the master.</span>
+sentinel parallel-syncs mymaster <span class="token number">1</span>
+
+<span class="token comment"># sentinel failover-timeout &lt;master-name&gt; &lt;milliseconds&gt;</span>
+<span class="token comment">#</span>
+<span class="token comment"># Specifies the failover timeout in milliseconds. It is used in many ways:</span>
+<span class="token comment">#</span>
+<span class="token comment"># - The time needed to re-start a failover after a previous failover was</span>
+<span class="token comment">#   already tried against the same master by a given Sentinel, is two</span>
+<span class="token comment">#   times the failover timeout.</span>
+<span class="token comment">#</span>
+<span class="token comment"># - The time needed for a slave replicating to a wrong master according</span>
+<span class="token comment">#   to a Sentinel current configuration, to be forced to replicate</span>
+<span class="token comment">#   with the right master, is exactly the failover timeout (counting since</span>
+<span class="token comment">#   the moment a Sentinel detected the misconfiguration).</span>
+<span class="token comment">#</span>
+<span class="token comment"># - The time needed to cancel a failover that is already in progress but</span>
+<span class="token comment">#   did not produced any configuration change (SLAVEOF NO ONE yet not</span>
+<span class="token comment">#   acknowledged by the promoted slave).</span>
+<span class="token comment">#</span>
+<span class="token comment"># - The maximum time a failover in progress waits for all the slaves to be</span>
+<span class="token comment">#   reconfigured as slaves of the new master. However even after this time</span>
+<span class="token comment">#   the slaves will be reconfigured by the Sentinels anyway, but not with</span>
+<span class="token comment">#   the exact parallel-syncs progression as specified.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Default is 3 minutes.</span>
+sentinel failover-timeout mymaster <span class="token number">180000</span>
+
+<span class="token comment"># SCRIPTS EXECUTION</span>
+<span class="token comment">#</span>
+<span class="token comment"># sentinel notification-script and sentinel reconfig-script are used in order</span>
+<span class="token comment"># to configure scripts that are called to notify the system administrator</span>
+<span class="token comment"># or to reconfigure clients after a failover. The scripts are executed</span>
+<span class="token comment"># with the following rules for error handling:</span>
+<span class="token comment">#</span>
+<span class="token comment"># If script exits with &quot;1&quot; the execution is retried later (up to a maximum</span>
+<span class="token comment"># number of times currently set to 10).</span>
+<span class="token comment">#</span>
+<span class="token comment"># If script exits with &quot;2&quot; (or an higher value) the script execution is</span>
+<span class="token comment"># not retried.</span>
+<span class="token comment">#</span>
+<span class="token comment"># If script terminates because it receives a signal the behavior is the same</span>
+<span class="token comment"># as exit code 1.</span>
+<span class="token comment">#</span>
+<span class="token comment"># A script has a maximum running time of 60 seconds. After this limit is</span>
+<span class="token comment"># reached the script is terminated with a SIGKILL and the execution retried.</span>
+
+<span class="token comment"># NOTIFICATION SCRIPT</span>
+<span class="token comment">#</span>
+<span class="token comment"># sentinel notification-script &lt;master-name&gt; &lt;script-path&gt;</span>
+<span class="token comment"># </span>
+<span class="token comment"># Call the specified notification script for any sentinel event that is</span>
+<span class="token comment"># generated in the WARNING level (for instance -sdown, -odown, and so forth).</span>
+<span class="token comment"># This script should notify the system administrator via email, SMS, or any</span>
+<span class="token comment"># other messaging system, that there is something wrong with the monitored</span>
+<span class="token comment"># Redis systems.</span>
+<span class="token comment">#</span>
+<span class="token comment"># The script is called with just two arguments: the first is the event type</span>
+<span class="token comment"># and the second the event description.</span>
+<span class="token comment">#</span>
+<span class="token comment"># The script must exist and be executable in order for sentinel to start if</span>
+<span class="token comment"># this option is provided.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Example:</span>
+<span class="token comment">#</span>
+<span class="token comment"># sentinel notification-script mymaster /var/redis/notify.sh</span>
+
+<span class="token comment"># CLIENTS RECONFIGURATION SCRIPT</span>
+<span class="token comment">#</span>
+<span class="token comment"># sentinel client-reconfig-script &lt;master-name&gt; &lt;script-path&gt;</span>
+<span class="token comment">#</span>
+<span class="token comment"># When the master changed because of a failover a script can be called in</span>
+<span class="token comment"># order to perform application-specific tasks to notify the clients that the</span>
+<span class="token comment"># configuration has changed and the master is at a different address.</span>
+<span class="token comment"># </span>
+<span class="token comment"># The following arguments are passed to the script:</span>
+<span class="token comment">#</span>
+<span class="token comment"># &lt;master-name&gt; &lt;role&gt; &lt;state&gt; &lt;from-ip&gt; &lt;from-port&gt; &lt;to-ip&gt; &lt;to-port&gt;</span>
+<span class="token comment">#</span>
+<span class="token comment"># &lt;state&gt; is currently always &quot;failover&quot;</span>
+<span class="token comment"># &lt;role&gt; is either &quot;leader&quot; or &quot;observer&quot;</span>
+<span class="token comment"># </span>
+<span class="token comment"># The arguments from-ip, from-port, to-ip, to-port are used to communicate</span>
+<span class="token comment"># the old address of the master and the new address of the elected slave</span>
+<span class="token comment"># (now a master).</span>
+<span class="token comment">#</span>
+<span class="token comment"># This script should be resistant to multiple invocations.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Example:</span>
+<span class="token comment">#</span>
+<span class="token comment"># sentinel client-reconfig-script mymaster /var/redis/reconfig.sh</span>
+
+<span class="token comment"># SECURITY</span>
+<span class="token comment">#</span>
+<span class="token comment"># By default SENTINEL SET will not be able to change the notification-script</span>
+<span class="token comment"># and client-reconfig-script at runtime. This avoids a trivial security issue</span>
+<span class="token comment"># where clients can set the script to anything and trigger a failover in order</span>
+<span class="token comment"># to get the program executed.</span>
+
+sentinel deny-scripts-reconfig <span class="token function">yes</span>
+</code></pre></div><h2 id="搭建-redis-集群"><a href="#搭建-redis-集群" aria-hidden="true" class="header-anchor">#</a> 搭建 Redis 集群</h2> <p>搭建一主两从环境，docker-compose.yml 配置如下：</p> <div class="language-sh extra-class"><pre class="language-sh"><code>version: <span class="token string">'3.1'</span>
+services:
+  master:
+    image: redis
+    container_name: redis-master
+    ports:
+      - <span class="token number">6379</span>:6379
+
+  slave1:
+    image: redis
+    container_name: redis-slave-1
+    ports:
+      - <span class="token number">6380</span>:6379
+    command: redis-server --slaveof redis-master <span class="token number">6379</span>
+
+  slave2:
+    image: redis
+    container_name: redis-slave-2
+    ports:
+      - <span class="token number">6381</span>:6379
+    command: redis-server --slaveof redis-master <span class="token number">6379</span>
+</code></pre></div><h2 id="搭建-sentinel-集群"><a href="#搭建-sentinel-集群" aria-hidden="true" class="header-anchor">#</a> 搭建 Sentinel 集群</h2> <p>我们至少需要创建三个 Sentinel 服务，docker-compose.yml 配置如下：</p> <div class="language-sh extra-class"><pre class="language-sh"><code>version: <span class="token string">'3.1'</span>
+services:
+  sentinel1:
+    image: redis
+    container_name: redis-sentinel-1
+    ports:
+      - <span class="token number">26379</span>:26379
+    command: redis-sentinel /usr/local/etc/redis/sentinel.conf
+    volumes:
+      - ./sentinel1.conf:/usr/local/etc/redis/sentinel.conf
+
+  sentinel2:
+    image: redis
+    container_name: redis-sentinel-2
+    ports:
+      - <span class="token number">26380</span>:26379
+    command: redis-sentinel /usr/local/etc/redis/sentinel.conf
+    volumes:
+      - ./sentinel2.conf:/usr/local/etc/redis/sentinel.conf
+
+  sentinel3:
+    image: redis
+    container_name: redis-sentinel-3
+    ports:
+      - <span class="token number">26381</span>:26379
+    command: redis-sentinel /usr/local/etc/redis/sentinel.conf
+    volumes:
+      - ./sentinel3.conf:/usr/local/etc/redis/sentinel.conf
+</code></pre></div><h2 id="修改-sentinel-配置文件"><a href="#修改-sentinel-配置文件" aria-hidden="true" class="header-anchor">#</a> 修改 Sentinel 配置文件</h2> <p>需要三份 sentinel.conf 配置文件，分别为 sentinel1.conf，sentinel2.conf，sentinel3.conf，配置文件内容相同</p> <div class="language-sh extra-class"><pre class="language-sh"><code>port <span class="token number">26379</span>
+<span class="token function">dir</span> /tmp
+<span class="token comment"># 自定义集群名，其中 127.0.0.1 为 redis-master 的 ip，6379 为 redis-master 的端口，2 为最小投票数（因为有 3 台 Sentinel 所以可以设置成 2）</span>
+sentinel monitor mymaster <span class="token number">106.13</span>.126.235  <span class="token number">6379</span> <span class="token number">2</span>
+sentinel down-after-milliseconds mymaster <span class="token number">30000</span>
+sentinel parallel-syncs mymaster <span class="token number">1</span>
+sentinel failover-timeout mymaster <span class="token number">180000</span>
+sentinel deny-scripts-reconfig <span class="token function">yes</span>
+</code></pre></div><h2 id="查看集群是否生效"><a href="#查看集群是否生效" aria-hidden="true" class="header-anchor">#</a> 查看集群是否生效</h2> <p>进入 Sentinel 容器，使用 Sentinel API 查看监控情况：</p> <div class="language-sh extra-class"><pre class="language-sh"><code>docker <span class="token builtin class-name">exec</span> -it redis-sentinel-1 /bin/bash
+redis-cli -p <span class="token number">26379</span>
+sentinel master mymaster
+sentinel slaves mymaster
+</code></pre></div><p><img src="/img/deploy/sentinel2.png" alt="sentinel"></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a8d644b6.js" defer></script><script src="/assets/js/2.b0571e25.js" defer></script><script src="/assets/js/72.fd85a201.js" defer></script>
+  </body>
+</html>

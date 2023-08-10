@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Maven 知识拓展</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.a0ada997.css" as="style"><link rel="preload" href="/assets/js/app.a8d644b6.js" as="script"><link rel="preload" href="/assets/js/2.b0571e25.js" as="script"><link rel="preload" href="/assets/js/144.d2957568.js" as="script"><link rel="prefetch" href="/assets/js/10.c8889642.js"><link rel="prefetch" href="/assets/js/100.51a741fb.js"><link rel="prefetch" href="/assets/js/101.d9dbfe05.js"><link rel="prefetch" href="/assets/js/102.52466a3b.js"><link rel="prefetch" href="/assets/js/103.3cf394c6.js"><link rel="prefetch" href="/assets/js/104.90d3018b.js"><link rel="prefetch" href="/assets/js/105.dd9bdeef.js"><link rel="prefetch" href="/assets/js/106.6bda79d0.js"><link rel="prefetch" href="/assets/js/107.ef743f0b.js"><link rel="prefetch" href="/assets/js/108.fa92013e.js"><link rel="prefetch" href="/assets/js/109.50afa695.js"><link rel="prefetch" href="/assets/js/11.e31c3ea5.js"><link rel="prefetch" href="/assets/js/110.aad632dd.js"><link rel="prefetch" href="/assets/js/111.499096ad.js"><link rel="prefetch" href="/assets/js/112.6069b48f.js"><link rel="prefetch" href="/assets/js/113.b8841596.js"><link rel="prefetch" href="/assets/js/114.23496351.js"><link rel="prefetch" href="/assets/js/115.e08ac3c1.js"><link rel="prefetch" href="/assets/js/116.760ebdb3.js"><link rel="prefetch" href="/assets/js/117.f226c0c1.js"><link rel="prefetch" href="/assets/js/118.65289b19.js"><link rel="prefetch" href="/assets/js/119.e3cf777f.js"><link rel="prefetch" href="/assets/js/12.78a1ab5b.js"><link rel="prefetch" href="/assets/js/120.7760e751.js"><link rel="prefetch" href="/assets/js/121.05ec49dd.js"><link rel="prefetch" href="/assets/js/122.688774b7.js"><link rel="prefetch" href="/assets/js/123.06bf7f11.js"><link rel="prefetch" href="/assets/js/124.62bfda58.js"><link rel="prefetch" href="/assets/js/125.eda5b500.js"><link rel="prefetch" href="/assets/js/126.1b39c0b0.js"><link rel="prefetch" href="/assets/js/127.65be59e4.js"><link rel="prefetch" href="/assets/js/128.25fbb5dc.js"><link rel="prefetch" href="/assets/js/129.cd5e2b4b.js"><link rel="prefetch" href="/assets/js/13.6a543448.js"><link rel="prefetch" href="/assets/js/130.fcc93329.js"><link rel="prefetch" href="/assets/js/131.6d7c37d1.js"><link rel="prefetch" href="/assets/js/132.09cf25fb.js"><link rel="prefetch" href="/assets/js/133.583d15f0.js"><link rel="prefetch" href="/assets/js/134.7b72ef87.js"><link rel="prefetch" href="/assets/js/135.733d2857.js"><link rel="prefetch" href="/assets/js/136.b8649b26.js"><link rel="prefetch" href="/assets/js/137.e71138fa.js"><link rel="prefetch" href="/assets/js/138.95b4f55f.js"><link rel="prefetch" href="/assets/js/139.c09e22b6.js"><link rel="prefetch" href="/assets/js/14.819689ab.js"><link rel="prefetch" href="/assets/js/140.71186b46.js"><link rel="prefetch" href="/assets/js/141.5bb51b5a.js"><link rel="prefetch" href="/assets/js/142.94804f8e.js"><link rel="prefetch" href="/assets/js/143.7191f64e.js"><link rel="prefetch" href="/assets/js/145.651e0adf.js"><link rel="prefetch" href="/assets/js/146.d0a83694.js"><link rel="prefetch" href="/assets/js/147.fc4d286f.js"><link rel="prefetch" href="/assets/js/148.410aec93.js"><link rel="prefetch" href="/assets/js/149.a453f4de.js"><link rel="prefetch" href="/assets/js/15.5bc49d67.js"><link rel="prefetch" href="/assets/js/150.77f0ea12.js"><link rel="prefetch" href="/assets/js/151.c808f32e.js"><link rel="prefetch" href="/assets/js/152.22e5d574.js"><link rel="prefetch" href="/assets/js/153.bc4da283.js"><link rel="prefetch" href="/assets/js/154.fa61ee21.js"><link rel="prefetch" href="/assets/js/155.42087f9f.js"><link rel="prefetch" href="/assets/js/156.7745074e.js"><link rel="prefetch" href="/assets/js/157.804702be.js"><link rel="prefetch" href="/assets/js/158.b6fe8f70.js"><link rel="prefetch" href="/assets/js/159.8a7a433b.js"><link rel="prefetch" href="/assets/js/16.434879fd.js"><link rel="prefetch" href="/assets/js/160.1a976dd2.js"><link rel="prefetch" href="/assets/js/161.14311375.js"><link rel="prefetch" href="/assets/js/162.6bbdd1e5.js"><link rel="prefetch" href="/assets/js/163.2c60a568.js"><link rel="prefetch" href="/assets/js/164.e7567976.js"><link rel="prefetch" href="/assets/js/165.7a2dc778.js"><link rel="prefetch" href="/assets/js/166.c9a838e8.js"><link rel="prefetch" href="/assets/js/17.14403580.js"><link rel="prefetch" href="/assets/js/18.08ac9cad.js"><link rel="prefetch" href="/assets/js/19.2c183b64.js"><link rel="prefetch" href="/assets/js/20.32bb3cb9.js"><link rel="prefetch" href="/assets/js/21.d966558e.js"><link rel="prefetch" href="/assets/js/22.c75c7c76.js"><link rel="prefetch" href="/assets/js/23.7fd7f7c3.js"><link rel="prefetch" href="/assets/js/24.36b6b4eb.js"><link rel="prefetch" href="/assets/js/25.8f357f46.js"><link rel="prefetch" href="/assets/js/26.61d906dd.js"><link rel="prefetch" href="/assets/js/27.08330a35.js"><link rel="prefetch" href="/assets/js/28.b1e01410.js"><link rel="prefetch" href="/assets/js/29.936218e3.js"><link rel="prefetch" href="/assets/js/3.3214ea23.js"><link rel="prefetch" href="/assets/js/30.c0b9efde.js"><link rel="prefetch" href="/assets/js/31.5b6e3df7.js"><link rel="prefetch" href="/assets/js/32.6374edaf.js"><link rel="prefetch" href="/assets/js/33.928e8282.js"><link rel="prefetch" href="/assets/js/34.92067108.js"><link rel="prefetch" href="/assets/js/35.154d21dd.js"><link rel="prefetch" href="/assets/js/36.e5ad0869.js"><link rel="prefetch" href="/assets/js/37.385b33d5.js"><link rel="prefetch" href="/assets/js/38.215a6333.js"><link rel="prefetch" href="/assets/js/39.bbf6207d.js"><link rel="prefetch" href="/assets/js/4.d34ebd53.js"><link rel="prefetch" href="/assets/js/40.bc0f7c00.js"><link rel="prefetch" href="/assets/js/41.3ba84cff.js"><link rel="prefetch" href="/assets/js/42.04a42e98.js"><link rel="prefetch" href="/assets/js/43.9a5e58fa.js"><link rel="prefetch" href="/assets/js/44.ad33bbd6.js"><link rel="prefetch" href="/assets/js/45.17f6595d.js"><link rel="prefetch" href="/assets/js/46.a5afba11.js"><link rel="prefetch" href="/assets/js/47.838086e6.js"><link rel="prefetch" href="/assets/js/48.34f3613a.js"><link rel="prefetch" href="/assets/js/49.726aa7d7.js"><link rel="prefetch" href="/assets/js/5.95ea0968.js"><link rel="prefetch" href="/assets/js/50.cb833116.js"><link rel="prefetch" href="/assets/js/51.3ed1ad45.js"><link rel="prefetch" href="/assets/js/52.54cf0f85.js"><link rel="prefetch" href="/assets/js/53.513a15ca.js"><link rel="prefetch" href="/assets/js/54.48b671a4.js"><link rel="prefetch" href="/assets/js/55.4ea41ff7.js"><link rel="prefetch" href="/assets/js/56.2c85bb70.js"><link rel="prefetch" href="/assets/js/57.c4b7c57f.js"><link rel="prefetch" href="/assets/js/58.8645cbfa.js"><link rel="prefetch" href="/assets/js/59.93bb241a.js"><link rel="prefetch" href="/assets/js/6.d3d6f703.js"><link rel="prefetch" href="/assets/js/60.bb6e6605.js"><link rel="prefetch" href="/assets/js/61.286ce4e5.js"><link rel="prefetch" href="/assets/js/62.faedf14e.js"><link rel="prefetch" href="/assets/js/63.ce821da4.js"><link rel="prefetch" href="/assets/js/64.d3bd4444.js"><link rel="prefetch" href="/assets/js/65.6dce8124.js"><link rel="prefetch" href="/assets/js/66.9926dcf1.js"><link rel="prefetch" href="/assets/js/67.8ba47f6f.js"><link rel="prefetch" href="/assets/js/68.fb08fa45.js"><link rel="prefetch" href="/assets/js/69.99366761.js"><link rel="prefetch" href="/assets/js/7.65a53a16.js"><link rel="prefetch" href="/assets/js/70.b58184ca.js"><link rel="prefetch" href="/assets/js/71.e807ce86.js"><link rel="prefetch" href="/assets/js/72.fd85a201.js"><link rel="prefetch" href="/assets/js/73.347f4455.js"><link rel="prefetch" href="/assets/js/74.1614468f.js"><link rel="prefetch" href="/assets/js/75.1b48dd21.js"><link rel="prefetch" href="/assets/js/76.34386640.js"><link rel="prefetch" href="/assets/js/77.98723d2f.js"><link rel="prefetch" href="/assets/js/78.853e0232.js"><link rel="prefetch" href="/assets/js/79.f13b56d9.js"><link rel="prefetch" href="/assets/js/8.1f5a2468.js"><link rel="prefetch" href="/assets/js/80.9b7ea6e5.js"><link rel="prefetch" href="/assets/js/81.b6c297c9.js"><link rel="prefetch" href="/assets/js/82.0f97cc22.js"><link rel="prefetch" href="/assets/js/83.31634315.js"><link rel="prefetch" href="/assets/js/84.c8e9154d.js"><link rel="prefetch" href="/assets/js/85.961b5b48.js"><link rel="prefetch" href="/assets/js/86.0656beb0.js"><link rel="prefetch" href="/assets/js/87.2216b902.js"><link rel="prefetch" href="/assets/js/88.5f59eb52.js"><link rel="prefetch" href="/assets/js/89.c1a19999.js"><link rel="prefetch" href="/assets/js/9.4ab6239e.js"><link rel="prefetch" href="/assets/js/90.c3ffff3a.js"><link rel="prefetch" href="/assets/js/91.093bc4a1.js"><link rel="prefetch" href="/assets/js/92.b98a6c4b.js"><link rel="prefetch" href="/assets/js/93.721ce10b.js"><link rel="prefetch" href="/assets/js/94.2c601c95.js"><link rel="prefetch" href="/assets/js/95.d1677f3d.js"><link rel="prefetch" href="/assets/js/96.e71019bc.js"><link rel="prefetch" href="/assets/js/97.d7a92048.js"><link rel="prefetch" href="/assets/js/98.21bdf582.js"><link rel="prefetch" href="/assets/js/99.5df4fe80.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a0ada997.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="基本命令"><a href="#基本命令" aria-hidden="true" class="header-anchor">#</a> 基本命令</h2> <ul><li>查看当前那个setting.xml生效： mvn -X</li> <li>查看正在起作用的是那个settings.xml的内容: mvn help:effective-settings</li></ul> <h2 id="配置setting"><a href="#配置setting" aria-hidden="true" class="header-anchor">#</a> 配置Setting</h2> <h3 id="配置本地仓库"><a href="#配置本地仓库" aria-hidden="true" class="header-anchor">#</a> 配置本地仓库</h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token operator">&lt;</span>localRepository<span class="token operator">&gt;</span>E:<span class="token punctuation">\</span>JAVA<span class="token punctuation">\</span>Maven<span class="token operator">&lt;</span>/localRepository<span class="token operator">&gt;</span> 
+</code></pre></div><h3 id="配置mirrors远程镜像-一般配置一到两个镜像"><a href="#配置mirrors远程镜像-一般配置一到两个镜像" aria-hidden="true" class="header-anchor">#</a> 配置mirrors远程镜像(一般配置一到两个镜像)</h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token operator">&lt;</span>mirrors<span class="token operator">&gt;</span>
+     <span class="token operator">&lt;</span>mirror<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>alimaven<span class="token operator">&lt;</span>/id<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>aliyun maven<span class="token operator">&lt;</span>/name<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>url<span class="token operator">&gt;</span>http://maven.aliyun.com/mvn/view<span class="token operator">&lt;</span>/url<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>mirrorOf<span class="token operator">&gt;</span>central<span class="token operator">&lt;</span>/mirrorOf<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/mirror<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>mirror<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>jboss-public-repository-group<span class="token operator">&lt;</span>/id<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>mirrorOf<span class="token operator">&gt;</span>central<span class="token operator">&lt;</span>/mirrorOf<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>JBoss Public Repository Group<span class="token operator">&lt;</span>/name<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>url<span class="token operator">&gt;</span>http://repository.jboss.org/nexus/content/groups/public<span class="token operator">&lt;</span>/url<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/mirror<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>mirror<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>ibiblio<span class="token operator">&lt;</span>/id<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>mirrorOf<span class="token operator">&gt;</span>central<span class="token operator">&lt;</span>/mirrorOf<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>Human Readable Name <span class="token keyword">for</span> this Mirror.<span class="token operator">&lt;</span>/name<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>url<span class="token operator">&gt;</span>http://mirrors.ibiblio.org/pub/mirrors/maven2/<span class="token operator">&lt;</span>/url<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/mirror<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>mirror<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>central<span class="token operator">&lt;</span>/id<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>Maven Repository Switchboard<span class="token operator">&lt;</span>/name<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>url<span class="token operator">&gt;</span>http://repo1.maven.org/maven2/<span class="token operator">&lt;</span>/url<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>mirrorOf<span class="token operator">&gt;</span>central<span class="token operator">&lt;</span>/mirrorOf<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/mirror<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>mirror<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>repo<span class="token operator"><span class="token file-descriptor important">2</span>&lt;</span>/id<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>mirrorOf<span class="token operator">&gt;</span>central<span class="token operator">&lt;</span>/mirrorOf<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>Human Readable Name <span class="token keyword">for</span> this Mirror.<span class="token operator">&lt;</span>/name<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>url<span class="token operator">&gt;</span>http://repo2.maven.org/maven2/<span class="token operator">&lt;</span>/url<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/mirror<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>/mirrors<span class="token operator">&gt;</span>
+</code></pre></div><h3 id="配置profiles构建"><a href="#配置profiles构建" aria-hidden="true" class="header-anchor">#</a> 配置profiles构建</h3> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token operator">&lt;</span>profile<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>jdk1<span class="token operator"><span class="token file-descriptor important">8</span>&lt;</span>/id<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>activation<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>jdk<span class="token operator">&gt;</span><span class="token number">1</span>.<span class="token operator"><span class="token file-descriptor important">8</span>&lt;</span>/jdk<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>activeByDefault<span class="token operator">&gt;</span>true<span class="token operator">&lt;</span>/activeByDefault<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>/activation<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>properties<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>maven.compiler.source<span class="token operator">&gt;</span><span class="token number">1</span>.<span class="token operator"><span class="token file-descriptor important">8</span>&lt;</span>/maven.compiler.source<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>maven.compiler.target<span class="token operator">&gt;</span><span class="token number">1</span>.<span class="token operator"><span class="token file-descriptor important">8</span>&lt;</span>/maven.compiler.target<span class="token operator">&gt;</span>
+         <span class="token operator">&lt;</span>maven.compiler.compilerVersion<span class="token operator">&gt;</span><span class="token number">1</span>.<span class="token operator"><span class="token file-descriptor important">8</span>&lt;</span>/maven.compiler.compilerVersion<span class="token operator">&gt;</span>
+     <span class="token operator">&lt;</span>/properties<span class="token operator">&gt;</span>
+ <span class="token operator">&lt;</span>/profile<span class="token operator">&gt;</span>
+</code></pre></div><h3 id="完整setting配置"><a href="#完整setting配置" aria-hidden="true" class="header-anchor">#</a> 完整setting配置</h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token operator">&lt;</span>?xml <span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token string">&quot;1.0&quot;</span> <span class="token assign-left variable">encoding</span><span class="token operator">=</span><span class="token string">&quot;UTF-8&quot;</span>?<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span><span class="token operator">!</span>--
+Licensed to the Apache Software Foundation <span class="token punctuation">(</span>ASF<span class="token punctuation">)</span> under one
+or <span class="token function">more</span> contributor license agreements.  See the NOTICE <span class="token function">file</span>
+distributed with this work <span class="token keyword">for</span> additional information
+regarding copyright ownership.  The ASF licenses this <span class="token function">file</span>
+to you under the Apache License, Version <span class="token number">2.0</span> <span class="token punctuation">(</span>the
+<span class="token string">&quot;License&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> you may not use this <span class="token function">file</span> except <span class="token keyword">in</span> compliance
+with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to <span class="token keyword">in</span> writing,
+software distributed under the License is distributed on an
+<span class="token string">&quot;AS IS&quot;</span> BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License <span class="token keyword">for</span> the
+specific language governing permissions and limitations
+under the License.
+--<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span><span class="token operator">!</span>--
+ <span class="token operator">|</span> This is the configuration <span class="token function">file</span> <span class="token keyword">for</span> Maven. It can be specified at two levels:
+ <span class="token operator">|</span>
+ <span class="token operator">|</span>  <span class="token number">1</span>. User Level. This settings.xml <span class="token function">file</span> provides configuration <span class="token keyword">for</span> a single user,
+ <span class="token operator">|</span>                 and is normally provided <span class="token keyword">in</span> <span class="token variable">${user.home}</span>/.m2/settings.xml.
+ <span class="token operator">|</span>
+ <span class="token operator">|</span>                 NOTE: This location can be overridden with the CLI option:
+ <span class="token operator">|</span>
+ <span class="token operator">|</span>                 -s /path/to/user/settings.xml
+ <span class="token operator">|</span>
+ <span class="token operator">|</span>  <span class="token number">2</span>. Global Level. This settings.xml <span class="token function">file</span> provides configuration <span class="token keyword">for</span> all Maven
+ <span class="token operator">|</span>                 <span class="token function">users</span> on a machine <span class="token punctuation">(</span>assuming they<span class="token string">'re all using the same Maven
+ |                 installation). It'</span>s normally provided <span class="token keyword">in</span>
+ <span class="token operator">|</span>                 <span class="token variable">${maven.conf}</span>/settings.xml.
+ <span class="token operator">|</span>
+ <span class="token operator">|</span>                 NOTE: This location can be overridden with the CLI option:
+ <span class="token operator">|</span>
+ <span class="token operator">|</span>                 -gs /path/to/global/settings.xml
+ <span class="token operator">|</span>
+ <span class="token operator">|</span> The sections <span class="token keyword">in</span> this sample <span class="token function">file</span> are intended to give you a running start at
+ <span class="token operator">|</span> getting the <span class="token function">most</span> out of your Maven installation. Where appropriate, the default
+ <span class="token operator">|</span> values <span class="token punctuation">(</span>values used when the setting is not specified<span class="token punctuation">)</span> are provided.
+ <span class="token operator">|</span>
+ <span class="token operator">|</span>--<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>settings <span class="token assign-left variable">xmlns</span><span class="token operator">=</span><span class="token string">&quot;http://maven.apache.org/SETTINGS/1.0.0&quot;</span>
+          xmlns:xsi<span class="token operator">=</span><span class="token string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+          xsi:schemaLocation<span class="token operator">=</span><span class="token string">&quot;http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span>-- localRepository
+     <span class="token operator">|</span> The path to the <span class="token builtin class-name">local</span> repository maven will use to store artifacts.
+     <span class="token operator">|</span>
+     <span class="token operator">|</span> Default: <span class="token variable">${user.home}</span>/.m2/repository
+    <span class="token operator">&lt;</span>localRepository<span class="token operator">&gt;</span>/path/to/local/repo<span class="token operator">&lt;</span>/localRepository<span class="token operator">&gt;</span>
+    --<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>localRepository<span class="token operator">&gt;</span>D:<span class="token punctuation">\</span>Program Files<span class="token punctuation">\</span>Develop<span class="token punctuation">\</span>Portable<span class="token punctuation">\</span>localRepository<span class="token operator">&lt;</span>/localRepository<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">!</span>-- interactiveMode
+     <span class="token operator">|</span> This will determine whether maven prompts you when it needs input. If <span class="token builtin class-name">set</span> to false,
+     <span class="token operator">|</span> maven will use a sensible default value, perhaps based on some other setting, <span class="token keyword">for</span>
+     <span class="token operator">|</span> the parameter <span class="token keyword">in</span> question.
+     <span class="token operator">|</span>
+     <span class="token operator">|</span> Default: <span class="token boolean">true</span>
+    <span class="token operator">&lt;</span>interactiveMode<span class="token operator">&gt;</span>true<span class="token operator">&lt;</span>/interactiveMode<span class="token operator">&gt;</span>
+    --<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">!</span>-- offline
+     <span class="token operator">|</span> Determines whether maven should attempt to connect to the network when executing a build.
+     <span class="token operator">|</span> This will have an effect on artifact downloads, artifact deployment, and others.
+     <span class="token operator">|</span>
+     <span class="token operator">|</span> Default: <span class="token boolean">false</span>
+    <span class="token operator">&lt;</span>offline<span class="token operator">&gt;</span>false<span class="token operator">&lt;</span>/offline<span class="token operator">&gt;</span>
+    --<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">!</span>-- pluginGroups
+     <span class="token operator">|</span> This is a list of additional group identifiers that will be searched when resolving plugins by their prefix, i.e.
+     <span class="token operator">|</span> when invoking a <span class="token builtin class-name">command</span> line like <span class="token string">&quot;mvn prefix:goal&quot;</span><span class="token builtin class-name">.</span> Maven will automatically <span class="token function">add</span> the group identifiers
+     <span class="token operator">|</span> <span class="token string">&quot;org.apache.maven.plugins&quot;</span> and <span class="token string">&quot;org.codehaus.mojo&quot;</span> <span class="token keyword">if</span> these are not already contained <span class="token keyword">in</span> the list.
+     <span class="token operator">|</span>--<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>pluginGroups<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span>-- pluginGroup
+         <span class="token operator">|</span> Specifies a further group identifier to use <span class="token keyword">for</span> plugin lookup.
+        <span class="token operator">&lt;</span>pluginGroup<span class="token operator">&gt;</span>com.your.plugins<span class="token operator">&lt;</span>/pluginGroup<span class="token operator">&gt;</span>
+        --<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/pluginGroups<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">!</span>-- proxies
+     <span class="token operator">|</span> This is a list of proxies <span class="token function">which</span> can be used on this machine to connect to the network.
+     <span class="token operator">|</span> Unless otherwise specified <span class="token punctuation">(</span>by system property or command-line switch<span class="token punctuation">)</span>, the first proxy
+     <span class="token operator">|</span> specification <span class="token keyword">in</span> this list marked as active will be used.
+     <span class="token operator">|</span>--<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>proxies<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span>-- proxy
+         <span class="token operator">|</span> Specification <span class="token keyword">for</span> one proxy, to be used <span class="token keyword">in</span> connecting to the network.
+         <span class="token operator">|</span>
+        <span class="token operator">&lt;</span>proxy<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>optional<span class="token operator">&lt;</span>/id<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>active<span class="token operator">&gt;</span>true<span class="token operator">&lt;</span>/active<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>protocol<span class="token operator">&gt;</span>http<span class="token operator">&lt;</span>/protocol<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>username<span class="token operator">&gt;</span>proxyuser<span class="token operator">&lt;</span>/username<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>password<span class="token operator">&gt;</span>proxypass<span class="token operator">&lt;</span>/password<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>host<span class="token operator">&gt;</span>proxy.host.net<span class="token operator">&lt;</span>/host<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>port<span class="token operator">&gt;</span><span class="token number">8</span><span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/port<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>nonProxyHosts<span class="token operator">&gt;</span>local.net<span class="token operator">|</span>some.host.com<span class="token operator">&lt;</span>/nonProxyHosts<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>/proxy<span class="token operator">&gt;</span>
+        --<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/proxies<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">!</span>-- servers
+     <span class="token operator">|</span> This is a list of authentication profiles, keyed by the server-id used within the system.
+     <span class="token operator">|</span> Authentication profiles can be used whenever maven must <span class="token function">make</span> a connection to a remote server.
+     <span class="token operator">|</span>--<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>servers<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span>-- server
+         <span class="token operator">|</span> Specifies the authentication information to use when connecting to a particular server, identified by
+         <span class="token operator">|</span> a unique name within the system <span class="token punctuation">(</span>referred to by the <span class="token string">'id'</span> attribute below<span class="token punctuation">)</span>.
+         <span class="token operator">|</span>
+         <span class="token operator">|</span> NOTE: You should either specify username/password OR privateKey/passphrase, since these pairings are
+         <span class="token operator">|</span>       used together.
+         <span class="token operator">|</span>
+        <span class="token operator">&lt;</span>server<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>deploymentRepo<span class="token operator">&lt;</span>/id<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>username<span class="token operator">&gt;</span>repouser<span class="token operator">&lt;</span>/username<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>password<span class="token operator">&gt;</span>repopwd<span class="token operator">&lt;</span>/password<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>/server<span class="token operator">&gt;</span>
+        --<span class="token operator">&gt;</span>
+
+        <span class="token operator">&lt;</span><span class="token operator">!</span>-- Another sample, using keys to authenticate.
+        <span class="token operator">&lt;</span>server<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>siteServer<span class="token operator">&lt;</span>/id<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>privateKey<span class="token operator">&gt;</span>/path/to/private/key<span class="token operator">&lt;</span>/privateKey<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>passphrase<span class="token operator">&gt;</span>optional<span class="token punctuation">;</span> leave empty <span class="token keyword">if</span> not used.<span class="token operator">&lt;</span>/passphrase<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>/server<span class="token operator">&gt;</span>
+        --<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/servers<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">!</span>-- mirrors
+     <span class="token operator">|</span> This is a list of mirrors to be used <span class="token keyword">in</span> downloading artifacts from remote repositories.
+     <span class="token operator">|</span>
+     <span class="token operator">|</span> It works like this: a POM may <span class="token builtin class-name">declare</span> a repository to use <span class="token keyword">in</span> resolving certain artifacts.
+     <span class="token operator">|</span> However, this repository may have problems with heavy traffic at times, so people have mirrored
+     <span class="token operator">|</span> it to several places.
+     <span class="token operator">|</span>
+     <span class="token operator">|</span> That repository definition will have a unique id, so we can create a mirror reference <span class="token keyword">for</span> that
+     <span class="token operator">|</span> repository, to be used as an alternate download site. The mirror site will be the preferred
+     <span class="token operator">|</span> server <span class="token keyword">for</span> that repository.
+     <span class="token operator">|</span>--<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>mirrors<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span>-- mirror
+         <span class="token operator">|</span> Specifies a repository mirror site to use instead of a given repository. The repository that
+         <span class="token operator">|</span> this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+         <span class="token operator">|</span> <span class="token keyword">for</span> inheritance and direct lookup purposes, and must be unique across the <span class="token builtin class-name">set</span> of mirrors.
+         <span class="token operator">|</span>
+        <span class="token operator">&lt;</span>mirror<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>mirrorId<span class="token operator">&lt;</span>/id<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>mirrorOf<span class="token operator">&gt;</span>repositoryId<span class="token operator">&lt;</span>/mirrorOf<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>Human Readable Name <span class="token keyword">for</span> this Mirror.<span class="token operator">&lt;</span>/name<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>url<span class="token operator">&gt;</span>http://my.repository.com/repo/path<span class="token operator">&lt;</span>/url<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>/mirror<span class="token operator">&gt;</span>
+         --<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>mirror<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>alimaven<span class="token operator">&lt;</span>/id<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>aliyun maven<span class="token operator">&lt;</span>/name<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>url<span class="token operator">&gt;</span>http://maven.aliyun.com/mvn/view<span class="token operator">&lt;</span>/url<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>mirrorOf<span class="token operator">&gt;</span>central<span class="token operator">&lt;</span>/mirrorOf<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>/mirror<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>mirror<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>jboss-public-repository-group<span class="token operator">&lt;</span>/id<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>mirrorOf<span class="token operator">&gt;</span>central<span class="token operator">&lt;</span>/mirrorOf<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>JBoss Public Repository Group<span class="token operator">&lt;</span>/name<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>url<span class="token operator">&gt;</span>http://repository.jboss.org/nexus/content/groups/public<span class="token operator">&lt;</span>/url<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>/mirror<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>mirror<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>ibiblio<span class="token operator">&lt;</span>/id<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>mirrorOf<span class="token operator">&gt;</span>central<span class="token operator">&lt;</span>/mirrorOf<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>Human Readable Name <span class="token keyword">for</span> this Mirror.<span class="token operator">&lt;</span>/name<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>url<span class="token operator">&gt;</span>http://mirrors.ibiblio.org/pub/mirrors/maven2/<span class="token operator">&lt;</span>/url<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>/mirror<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>mirror<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>central<span class="token operator">&lt;</span>/id<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>Maven Repository Switchboard<span class="token operator">&lt;</span>/name<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>url<span class="token operator">&gt;</span>http://repo1.maven.org/maven2/<span class="token operator">&lt;</span>/url<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>mirrorOf<span class="token operator">&gt;</span>central<span class="token operator">&lt;</span>/mirrorOf<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>/mirror<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>mirror<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>repo<span class="token operator"><span class="token file-descriptor important">2</span>&lt;</span>/id<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>mirrorOf<span class="token operator">&gt;</span>central<span class="token operator">&lt;</span>/mirrorOf<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>Human Readable Name <span class="token keyword">for</span> this Mirror.<span class="token operator">&lt;</span>/name<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>url<span class="token operator">&gt;</span>http://repo2.maven.org/maven2/<span class="token operator">&lt;</span>/url<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>/mirror<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/mirrors<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">!</span>-- profiles
+     <span class="token operator">|</span> This is a list of profiles <span class="token function">which</span> can be activated <span class="token keyword">in</span> a variety of ways, and <span class="token function">which</span> can modify
+     <span class="token operator">|</span> the build process. Profiles provided <span class="token keyword">in</span> the settings.xml are intended to provide <span class="token builtin class-name">local</span> machine-
+     <span class="token operator">|</span> specific paths and repository locations <span class="token function">which</span> allow the build to work <span class="token keyword">in</span> the <span class="token builtin class-name">local</span> environment.
+     <span class="token operator">|</span>
+     <span class="token operator">|</span> For example, <span class="token keyword">if</span> you have an integration testing plugin - like cactus - that needs to know where
+     <span class="token operator">|</span> your Tomcat instance is installed, you can provide a variable here such that the variable is
+     <span class="token operator">|</span> dereferenced during the build process to configure the cactus plugin.
+     <span class="token operator">|</span>
+     <span class="token operator">|</span> As noted above, profiles can be activated <span class="token keyword">in</span> a variety of ways. One way - the activeProfiles
+     <span class="token operator">|</span> section of this document <span class="token punctuation">(</span>settings.xml<span class="token punctuation">)</span> - will be discussed later. Another way essentially
+     <span class="token operator">|</span> relies on the detection of a system property, either matching a particular value <span class="token keyword">for</span> the property,
+     <span class="token operator">|</span> or merely testing its existence. Profiles can also be activated by JDK version prefix, where a
+     <span class="token operator">|</span> value of <span class="token string">'1.4'</span> might activate a profile when the build is executed on a JDK version of <span class="token string">'1.4.2_07'</span><span class="token builtin class-name">.</span>
+     <span class="token operator">|</span> Finally, the list of active profiles can be specified directly from the <span class="token builtin class-name">command</span> line.
+     <span class="token operator">|</span>
+     <span class="token operator">|</span> NOTE: For profiles defined <span class="token keyword">in</span> the settings.xml, you are restricted to specifying only artifact
+     <span class="token operator">|</span>       repositories, plugin repositories, and free-form properties to be used as configuration
+     <span class="token operator">|</span>       variables <span class="token keyword">for</span> <span class="token for-or-select variable">plugins</span> <span class="token keyword">in</span> the POM.
+     <span class="token operator">|</span>
+     <span class="token operator">|</span>--<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>profiles<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span>-- profile
+         <span class="token operator">|</span> Specifies a <span class="token builtin class-name">set</span> of introductions to the build process, to be activated using one or <span class="token function">more</span> of the
+         <span class="token operator">|</span> mechanisms described above. For inheritance purposes, and to activate profiles via <span class="token operator">&lt;</span>activatedProfiles/<span class="token operator">&gt;</span>
+         <span class="token operator">|</span> or the <span class="token builtin class-name">command</span> line, profiles have to have an ID that is unique.
+         <span class="token operator">|</span>
+         <span class="token operator">|</span> An encouraged best practice <span class="token keyword">for</span> profile identification is to use a consistent naming convention
+         <span class="token operator">|</span> <span class="token keyword">for</span> profiles, such as <span class="token string">'env-dev'</span>, <span class="token string">'env-test'</span>, <span class="token string">'env-production'</span>, <span class="token string">'user-jdcasey'</span>, <span class="token string">'user-brett'</span>, etc.
+         <span class="token operator">|</span> This will <span class="token function">make</span> it <span class="token function">more</span> intuitive to understand what the <span class="token builtin class-name">set</span> of introduced profiles is attempting
+         <span class="token operator">|</span> to accomplish, particularly when you only have a list of profile <span class="token function">id</span><span class="token string">'s for debug.
+         |
+         | This profile example uses the JDK version to trigger activation, and provides a JDK-specific repo.
+        &lt;profile&gt;
+          &lt;id&gt;jdk-1.4&lt;/id&gt;
+
+          &lt;activation&gt;
+            &lt;jdk&gt;1.4&lt;/jdk&gt;
+          &lt;/activation&gt;
+
+          &lt;repositories&gt;
+            &lt;repository&gt;
+              &lt;id&gt;jdk14&lt;/id&gt;
+              &lt;name&gt;Repository for JDK 1.4 builds&lt;/name&gt;
+              &lt;url&gt;http://www.myhost.com/maven/jdk14&lt;/url&gt;
+              &lt;layout&gt;default&lt;/layout&gt;
+              &lt;snapshotPolicy&gt;always&lt;/snapshotPolicy&gt;
+            &lt;/repository&gt;
+          &lt;/repositories&gt;
+        &lt;/profile&gt;
+        --&gt;
+        &lt;profile&gt;
+            &lt;id&gt;jdk18&lt;/id&gt;
+            &lt;activation&gt;
+                &lt;jdk&gt;1.8&lt;/jdk&gt;
+                &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+            &lt;/activation&gt;
+            &lt;properties&gt;
+                &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
+                &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;
+                &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;
+            &lt;/properties&gt;
+        &lt;/profile&gt;
+
+        &lt;!--
+         | Here is another profile, activated by the system property '</span>target-env<span class="token string">' with a value of '</span>dev<span class="token string">',
+         | which provides a specific path to the Tomcat instance. To use this, your plugin configuration
+         | might hypothetically look like:
+         |
+         | ...
+         | &lt;plugin&gt;
+         |   &lt;groupId&gt;org.myco.myplugins&lt;/groupId&gt;
+         |   &lt;artifactId&gt;myplugin&lt;/artifactId&gt;
+         |
+         |   &lt;configuration&gt;
+         |     &lt;tomcatLocation&gt;<span class="token variable">${tomcatPath}</span>&lt;/tomcatLocation&gt;
+         |   &lt;/configuration&gt;
+         | &lt;/plugin&gt;
+         | ...
+         |
+         | NOTE: If you just wanted to inject this configuration whenever someone set '</span>target-env' to
+         <span class="token operator">|</span>       anything, you could just leave off the <span class="token operator">&lt;</span>value/<span class="token operator">&gt;</span> inside the activation-property.
+         <span class="token operator">|</span>
+        <span class="token operator">&lt;</span>profile<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>env-dev<span class="token operator">&lt;</span>/id<span class="token operator">&gt;</span>
+
+          <span class="token operator">&lt;</span>activation<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>property<span class="token operator">&gt;</span>
+              <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>target-env<span class="token operator">&lt;</span>/name<span class="token operator">&gt;</span>
+              <span class="token operator">&lt;</span>value<span class="token operator">&gt;</span>dev<span class="token operator">&lt;</span>/value<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>/property<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>/activation<span class="token operator">&gt;</span>
+
+          <span class="token operator">&lt;</span>properties<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>tomcatPath<span class="token operator">&gt;</span>/path/to/tomcat/instance<span class="token operator">&lt;</span>/tomcatPath<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>/properties<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>/profile<span class="token operator">&gt;</span>
+        --<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/profiles<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">!</span>-- activeProfiles
+     <span class="token operator">|</span> List of profiles that are active <span class="token keyword">for</span> all builds.
+     <span class="token operator">|</span>
+    <span class="token operator">&lt;</span>activeProfiles<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>activeProfile<span class="token operator">&gt;</span>alwaysActiveProfile<span class="token operator">&lt;</span>/activeProfile<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>activeProfile<span class="token operator">&gt;</span>anotherAlwaysActiveProfile<span class="token operator">&lt;</span>/activeProfile<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/activeProfiles<span class="token operator">&gt;</span>
+    --<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>/settings<span class="token operator">&gt;</span>
+
+settings.xml
+</code></pre></div><h2 id="dependencymanagement-版本管控"><a href="#dependencymanagement-版本管控" aria-hidden="true" class="header-anchor">#</a> dependencyManagement 版本管控</h2> <ul><li>用来统一依赖的版本，子工程中默认是不会导入该标签中的依赖，需要把依赖再添加一次，但不需要写版本version标签参数，方便在父工程中统一的切换版本</li> <li>与dependencies不同， dependencies标签下的依赖，会根据scop范围传递到子工程中,(即子工程会根据scop自动导入这些依赖)</li></ul> <h2 id="具体案例"><a href="#具体案例" aria-hidden="true" class="header-anchor">#</a> 具体案例</h2> <p>可以在最外层设置版本控制</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token operator">&lt;</span>dependencyManagement<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>dependencies<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">!</span>-- Spring Cloud Begin --<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>org.springframework.cloud<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>spring-cloud-dependencies<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token variable">${spring-cloud.version}</span><span class="token operator">&lt;</span>/version<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>type<span class="token operator">&gt;</span>pom<span class="token operator">&lt;</span>/type<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>scope<span class="token operator">&gt;</span>import<span class="token operator">&lt;</span>/scope<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">!</span>-- Spring Cloud End --<span class="token operator">&gt;</span>
+
+            <span class="token operator">&lt;</span><span class="token operator">!</span>-- Spring Boot Admin Begin --<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>de.codecentric<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>spring-boot-admin-starter-server<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token variable">${spring-boot-admin.version}</span><span class="token operator">&lt;</span>/version<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>de.codecentric<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>spring-boot-admin-starter-client<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token variable">${spring-boot-admin.version}</span><span class="token operator">&lt;</span>/version<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">!</span>-- Spring Boot Admin End --<span class="token operator">&gt;</span>
+
+            <span class="token operator">&lt;</span><span class="token operator">!</span>-- ZipKin Begin --<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>io.zipkin.java<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>zipkin<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token variable">${zipkin.version}</span><span class="token operator">&lt;</span>/version<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>io.zipkin.java<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>zipkin-server<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token variable">${zipkin.version}</span><span class="token operator">&lt;</span>/version<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>io.zipkin.java<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>zipkin-autoconfigure-ui<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token variable">${zipkin.version}</span><span class="token operator">&lt;</span>/version<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">!</span>-- ZipKin End --<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>/dependencies<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/dependencyManagement<span class="token operator">&gt;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a8d644b6.js" defer></script><script src="/assets/js/2.b0571e25.js" defer></script><script src="/assets/js/144.d2957568.js" defer></script>
+  </body>
+</html>
